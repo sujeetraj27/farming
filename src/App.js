@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import SignIn from './components/auth/SiginIn';
+import Signup from './components/auth/Signup';
+import Dashboard from './components/dashboard/Dashboard';
+import Navbar from './components/layout/Navbar';
+import CreateProject from './components/projects/CreateProject';
+import ProjectDetails from './components/projects/ProjectDetails';
+import { connect } from 'react-redux'
+import PageNotFound from './components/dashboard/PageNotFound';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+  render() {
+    const { auth } = this.props;
+    console.log(auth)
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Dashboard} >
+
+            </Route>
+            <Route path='/project/:id' component={ProjectDetails} />
+            {/* <Route  >
+              {auth.uid  ? <Redirect to="/" /> : <SignIn />}
+            </Route> */}
+            <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/create' component={CreateProject} />
+            <Route path="*" component={PageNotFound} />
+            
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
-export default App;
+
+const MapStateToProps = (state) => {
+  console.log(state)
+  return {
+    auth: state.firebase.auth
+  }
+}
+
+export default connect(MapStateToProps)(App);
+
