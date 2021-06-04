@@ -3,7 +3,7 @@ body {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #95e8f5;
+  background: #9fa5ab;
 }
 
 code {
@@ -32,4 +32,229 @@ textarea.materialize-textarea:focus:not([readonly]) + label,
 input[type=email]:not(.browser-default):focus:not([readonly]) + label,
 input[type=password]:not(.browser-default):focus:not([readonly]) + label{
   color: #ec407a !important;
+}
+
+/*======== Slider ==================*/
+
+.thm-btn {
+  position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    background-color: #EDDD5D;
+    font-size: 20px;
+    color: #404A3D;
+    font-weight: 600;
+    padding: 23px 50px;
+    border-radius: 5px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    top: 10rem;
+}
+.slide{
+       background-size: cover;
+       background-repeat: no-repeat;
+      background-position: center;
+}
+.arrow{
+  
+  position: relative;
+  top: 65%;
+  height: 71px;
+  width: 120px;
+  justify-content: center;
+  background: white;
+  /* border-radius: 50%; */
+  cursor: pointer;
+  align-items: center;
+  transition: transform ease-in 0.1s;
+  float: right;
+  right: 0%;
+  padding: 25px;
+ margin: 20px;
+
+ background-color: #404A3D;
+  
+}
+.arrow:hover {
+  transform: scale(1.1);
+}
+.img-slider{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+i.fa.fa-chevron-right {
+  margin-left: 13px;
+}
+i.fa.fa-chevron-left {
+  margin-right: 13px;
+}
+
+.Item1.card.col-12.col-md-4.col-sm-2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hole_title{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.range{
+  height: 80px;
+  width: 380px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 0 65px 0 45px;
+
+}
+.range .sliderValue{
+  position: relative;
+  width: 100%;
+}
+
+.range .sliderValue span{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  /* background: red; */
+  color: #ffffff;
+  font-weight: 600;
+  text-emphasis: none;
+  text-align: center;
+  top: -30px;
+  transform: translateX(-50%);
+  line-height: 55px;
+  z-index: 2;
+
+}
+
+.range .sliderValue span:after{
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 45px;
+  background: red;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border: 3px solid #ffffff;
+  z-index: -1;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+
+}
+
+.range .field{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.range .field .value{
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  color: #664AFF;
+}
+
+.range .field .value.left{
+  left: -4px;
+}
+
+.range .field .value.right{
+  right: -9px;
+}
+.range .field input{
+  -webkit-appearance: none;
+  height: 3px;
+  width: 100%;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* .range .field input::-webkit-slider-thumb{
+   -webkit-appearance: none; 
+  height: 20px;
+  width: 20px;
+  background: #664AFF;
+  border-radius: 50%;
+  border: 1px solid #664AFF;
+  align-items: center;
+  cursor: pointer;
+  margin-top: -4px;
+} */
+
+.menu-tab{
+  display: grid;
+
+}
+.menu-tab .btn{
+  padding: 10px;
+  margin: 4px;
+
+}
+
+.main-heading{
+  padding-bottom: 15px;
+  border-bottom: 1px solid red;
+  /* width: fit-content; */
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+
+}
+.category{
+  margin-top: 30px;
+}
+.price-radio_btn{
+  margin-top: 45px;
+}
+.category h3{
+  padding-bottom: 5px;
+  border-bottom: 1px solid red;
+  width: fit-content;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+}
+.price-radio_btn h3{
+  padding-bottom: 2px;
+  border-bottom: 1px solid red;
+  width: fit-content;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.price_card{
+  margin-top: 45px;
+  height: 100%;
+}
+
+/* Filter*/
+.filter{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+.filter div{
+  flex: 1;
+}
+
+.sort_product h3{
+  padding-bottom: 5px;
+  border-bottom: 1px solid red;
+  width: fit-content;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.col.sort_product {
+  margin-top: 30px;
 }

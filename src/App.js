@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import SignIn from './components/auth/SiginIn';
 import Signup from './components/auth/Signup';
 import Dashboard from './components/dashboard/Dashboard';
@@ -8,6 +8,8 @@ import CreateProject from './components/projects/CreateProject';
 import ProjectDetails from './components/projects/ProjectDetails';
 import { connect } from 'react-redux'
 import PageNotFound from './components/dashboard/PageNotFound';
+import Home from './components/home/Home';
+import ProductDetails from './components/farm-product/ProductDetails';
 
 
 
@@ -20,18 +22,19 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
-            <Route exact path='/' component={Dashboard} >
-
+            <Route exact path='/' component={Home} />
+            <Route  path='/dashboard' component={Dashboard} >
             </Route>
             <Route path='/project/:id' component={ProjectDetails} />
             {/* <Route  >
               {auth.uid  ? <Redirect to="/" /> : <SignIn />}
             </Route> */}
+            <Route path='/shop' component={ProductDetails} />
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={Signup} />
             <Route path='/create' component={CreateProject} />
             <Route path="*" component={PageNotFound} />
-            
+
           </Switch>
         </div>
       </BrowserRouter>
